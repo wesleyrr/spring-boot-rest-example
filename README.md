@@ -1,7 +1,7 @@
 # spring-boot-rest-example
 A simple example of a spring-boot Rest application
 
-##Versions
+## Versions
 * linux Ubuntu 14.04 LTS
 * curl 7.35.0
 * java 1.8.0_181
