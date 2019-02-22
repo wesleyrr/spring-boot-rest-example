@@ -29,14 +29,14 @@ public class EmployeeController {
 
 	@GetMapping("/employees")
 	List<Employee> all() {
-		log.info("all employees]");
+		log.info("getting all employees");
 		
 		return repository.findAll();
 	}
 
 	@GetMapping("/employees/{id}")
 	Employee one(@PathVariable Long id) throws EmployeeNotFoundException {
-		log.info("get employee [id= " + id +"]");
+		log.info("getting employee [id= " + id +"]");
 		
 		return repository.findById(id)
 				.orElseThrow(() -> new EmployeeNotFoundException(id));
@@ -44,7 +44,7 @@ public class EmployeeController {
 	
 	@PostMapping("/employees")
 	Employee newEmployee(@RequestBody Employee newEmployee) {
-		log.info("employee recorded");
+		log.info("employee recorded [name: " + newEmployee.getName() + "]");
 		
 		return repository.save(newEmployee);
 	}
